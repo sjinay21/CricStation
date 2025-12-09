@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CricAI</title>
+    <link rel="stylesheet" href= "/stylesheets/cricStation.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">CricAI</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="nav-menu">
+          <ul>
+            <li><a href="/news">LatestNews</a></li>
+            <li><a href="/liveScores">Live Scores</a></li>
+            <!-- <li><a href="/footBall">footBall</a></li> liveScores-->
+            <li><a href="/topRunsScorers">Top Runs Scorers</a></li>
+            <li><a href="/topWicketTakers">Top Wicket Takers</a></li>
+            <li><a href="/about">About</a></li>
+             <!-- <li><a href="/loginpage" class="cta-button">Login / Sign Up</a></li> -->
+             <li><a href="/loginpage" class="cta-button" id="loginButton">Login / Sign Up</a></li>
+             <li><a href="/logout" class="cta-button" id="logoutButton" style="display: none;">Logout</a></li>
+          </ul>
+        </nav>
+      </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Elevate Your Cricket Scoring Experience</h1>
+      <p>Real-time scores, advanced analytics, and intuitive controls — everything you need in one platform.</p>
+      <button class="cta-button" id="startMatchBtn">Start A Match</button>
+      <div class="search-bar">
+        <input type="text" placeholder="Search matches...">
+        <button>Search</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h2>Key Features</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <img src="/images/livescorepic.jpg" id="livescore" alt="Live Score">
+        <h3>Live Score Tracking</h3>
+        <p>Experience every ball live, with instant updates.</p>
+      </div>
+      <div class="feature-card">
+        <img src="/images/ScoreCard.jpg" id="scorecard" alt="Scorecard">
+        <h3>Detailed Scorecards</h3>
+        <p>Comprehensive statistics and player profiles.</p>
+      </div>
+      <div class="feature-card">
+        <img src="/images/leaderBoard.jpg" id="statistics" alt="Stats">
+        <h3>Player Statistics</h3>
+        <p>Track player performances and records seamlessly.</p>
+      </div>
+      <div class="feature-card">
+        <img src="" alt="Fall of Wicket">
+        <h3>Fall of Wicket</h3>
+        <p>Keep track of every crucial moment in the game.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <h2>User Feedback</h2>
+    <div class="testimonial-carousel">
+      <div class="testimonial">“Absolutely phenomenal! InningsPlay has changed my scoring experience.” - User A</div>
+      <div class="testimonial">“The best cricket app for live scores and stats.” - User B</div>
+      <div class="testimonial">“Simple, fast, and very reliable.” - User C</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 InningsPlay. All Rights Reserved.</p>
+    <div class="social-icons">
+      <a href="#">Twitter</a>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+    </div>
+    <form class="newsletter">
+      <input type="email" placeholder="Subscribe to our newsletter">
+      <button type="submit">Subscribe</button>
+    </form>
+  </footer>
+
+
+  <script src="/javascripts/cricStation.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("/service-worker.js")
+        .then((registration) => {
+          console.warn("Service Worker registered with scope:", registration.scope);
+        })
+        .catch((error) => {
+          console.error("Service Worker registration failed:", error);
+        });
+    }
+  </script>
+</body>
+</html>

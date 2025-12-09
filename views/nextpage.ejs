@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Page</title>
+    <link rel="stylesheet" href="/stylesheets/nextpage.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <form id="playerNamesForm">
+        <h3>Select Opening Players</h3>
+        <div class="Opening-players">
+            <label for="striker">Striker Batsman:</label>
+            <input type="text" id="striker" name="striker" placeholder="Enter Player Name" required>
+
+            <label for="nonStriker">Non-striker Batsman:</label>
+            <input type="text" id="nonStriker" name="nonStriker" placeholder="Enter Player Name" required>
+
+            <label for="bowler">Opening Bowler:</label>
+            <input type="text" id="bowler" name="bowler" placeholder="Enter Player Name" required>
+
+            <div class="start">
+                <input type="submit" value="Start Match">
+            </div>
+        </div>
+    </form>
+    <script>
+        // Pass matchId to the global scope
+        window.matchId = "<%= matchId %>";
+    </script>
+    <script src="/javascripts/nextpage.js"></script>
+</body>
+</html>

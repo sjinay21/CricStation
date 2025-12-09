@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScoreCard</title>
+    <link rel="stylesheet" href="/stylesheets/scorecard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <!-- <a href="/chart" id="chart-icon" title="View Chart">
+    <i class="fas fa-chart-bar"></i>
+  </a> -->
+  <div id="chart-icon-wrapper">
+    <a href="/chart" id="chart-icon" title="View Chart">
+      <i class="fas fa-chart-bar"></i>
+    </a>
+    <span class="chart-label">View Chart</span>
+  </div>
+  <div id="customModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border-radius: 10px; text-align: center;">
+        <p>Start Next Over?</p>
+        <button id="yesButton">Yes</button>
+        <button id="noButton">No</button>
+    </div>
+</div>
+  <h3>0</h3>
+    <div class="scoreBoard">
+        <h2>Target:180</h2>
+        <span id="h1">Civil 6th sem: </span>
+        <div class="scoreHeader">
+        <h1>0/0</h1>
+        <div class="overs">
+          <span class="bracket">(</span>
+          <input type="text" value="0.0" class="over" id="ballToBall" disabled />
+          <input type="text" value="/5" class="over" id="overToOver" disabled />
+          <span class="bracket">)</span>
+        </div>
+      </div>
+      <div class="scoreDetails"><div id="CRR">CRR:0</div><div id="PrjScr">Projected Score:0</div></div>
+      <div class="batters">
+      <div class="striker">
+        <span id="sName">abc</span><span id="strikerScore">0(0)</span>
+      </div>
+      <div class="nonStriker">
+        <span id="nsName">xyz</span><span id="nonStrikerScore">0(0)</span>
+      </div>
+    </div>
+    <div id="thisOver">
+      <span id ="ThisOverText">This Over:</span>
+      <!-- <div>0</div>
+      <div>0</div>
+      <div>0</div>
+      <div>0</div>
+      <div>0</div>
+      <div>0</div> -->
+    </div>
+    <div id="bowler"> 
+      <span id="bwlName">hrushikesh Rakhe</span><span id="bwlAnalysis"><span id="bwlOver">0.0</span>-<span id="individualBwlMaidens">0</span>-<span id ="individualBwlRuns">0</span>-<span id="individualBwlWickets">0</span></span>
+    </div>
+        <div class="runs">
+          <button onclick="run('4')">4</button>
+          <button onclick="run('6')">6</button>
+          <button onclick="run('0')">0</button>
+          <button onclick="run('1')">1</button>
+          <button onclick="run('2')">2</button>
+          <button onclick="run('3')">3</button>
+          <button onclick="wide('1')">Wd</button>
+          <button id="wicket" onclick="run('1',true)">w</button>
+        </div>
+      </div>
+      <button id="second-ing">2nd Innings</button>
+      <!-- In your EJS file (scorecard.ejs) -->
+<script>
+  // Pass the matchId to the external JavaScript file
+  window.matchId = "<%= matchDetails._id %>";
+  window.sessionStorage.setItem('matchId', matchId);
+</script>
+      <script src="/javascripts/score.js" ></script>
+</body>
+</html>
